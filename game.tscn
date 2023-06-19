@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwkkb205nriln"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_uhdts"]
+[ext_resource type="PackedScene" uid="uid://bpadfd2x7uyuu" path="res://GameOver.tscn" id="2_wn3nj"]
+
+[node name="GameControl" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uhdts")
+
+[node name="Board" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 480.0
+
+[node name="Row0" type="HBoxContainer" parent="Board"]
+layout_mode = 2
+
+[node name="Btn0" type="TextureButton" parent="Board/Row0"]
+layout_mode = 2
+
+[node name="Btn1" type="TextureButton" parent="Board/Row0"]
+layout_mode = 2
+
+[node name="Btn2" type="TextureButton" parent="Board/Row0"]
+layout_mode = 2
+
+[node name="Row1" type="HBoxContainer" parent="Board"]
+layout_mode = 2
+
+[node name="Btn3" type="TextureButton" parent="Board/Row1"]
+layout_mode = 2
+
+[node name="Btn4" type="TextureButton" parent="Board/Row1"]
+layout_mode = 2
+
+[node name="Btn5" type="TextureButton" parent="Board/Row1"]
+layout_mode = 2
+
+[node name="Row2" type="HBoxContainer" parent="Board"]
+layout_mode = 2
+
+[node name="Btn6" type="TextureButton" parent="Board/Row2"]
+layout_mode = 2
+
+[node name="Btn7" type="TextureButton" parent="Board/Row2"]
+layout_mode = 2
+
+[node name="Btn8" type="TextureButton" parent="Board/Row2"]
+layout_mode = 2
+
+[node name="GameOverScreen" parent="." instance=ExtResource("2_wn3nj")]
+layout_mode = 1
+
+[connection signal="button_up" from="Board/Row0/Btn0" to="." method="_on_btn_0_button_up"]
+[connection signal="button_up" from="Board/Row0/Btn1" to="." method="_on_btn_1_button_up"]
+[connection signal="button_up" from="Board/Row0/Btn2" to="." method="_on_btn_2_button_up"]
+[connection signal="button_up" from="Board/Row1/Btn3" to="." method="_on_btn_3_button_up"]
+[connection signal="button_up" from="Board/Row1/Btn4" to="." method="_on_btn_4_button_up"]
+[connection signal="button_up" from="Board/Row1/Btn5" to="." method="_on_btn_5_button_up"]
+[connection signal="button_up" from="Board/Row2/Btn6" to="." method="_on_btn_6_button_up"]
+[connection signal="button_up" from="Board/Row2/Btn7" to="." method="_on_btn_7_button_up"]
+[connection signal="button_up" from="Board/Row2/Btn8" to="." method="_on_btn_8_button_up"]
+[connection signal="button_up" from="GameOverScreen/Container/Button" to="." method="_on_button_button_up"]
+
+[editable path="GameOverScreen"]
